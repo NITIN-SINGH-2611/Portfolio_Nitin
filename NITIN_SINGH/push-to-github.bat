@@ -34,7 +34,7 @@ echo Git user configured
 echo.
 echo Step 3: Setting up remote repository...
 git remote remove origin 2>nul
-git remote add origin https://github.com/NITIN-SINGH-2611/Portfolio.git
+git remote add origin https://github.com/NITIN-SINGH-2611/Portfolio_Nitin.git
 echo Remote repository configured
 
 echo.
@@ -76,19 +76,19 @@ if %errorlevel% equ 0 (
     echo   SUCCESS! Portfolio uploaded!
     echo ========================================
     echo.
-    echo Repository: https://github.com/NITIN-SINGH-2611/Portfolio
+    echo Repository: https://github.com/NITIN-SINGH-2611/Portfolio_Nitin
     echo.
     echo ========================================
     echo   NEXT: Enable GitHub Pages
     echo ========================================
     echo.
-    echo 1. Go to: https://github.com/NITIN-SINGH-2611/Portfolio/settings/pages
+    echo 1. Go to: https://github.com/NITIN-SINGH-2611/Portfolio_Nitin/settings/pages
     echo 2. Select 'main' branch
     echo 3. Click 'Save'
     echo 4. Wait 1-2 minutes
     echo.
     echo Your portfolio will be live at:
-    echo   https://NITIN-SINGH-2611.github.io/Portfolio/
+    echo   https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/
     echo.
 ) else (
     echo.

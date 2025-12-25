@@ -1,0 +1,38 @@
+═══════════════════════════════════════════════════════════
+   NITIN SINGH SAMANT - PORTFOLIO LINK
+═══════════════════════════════════════════════════════════
+
+🌐 MAIN PORTFOLIO LINK:
+https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/
+
+📄 SIMPLE LINK PAGE:
+https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/portfolio-link.html
+
+🔗 SHORT "NITIN" LINK:
+https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/nitin.html
+
+═══════════════════════════════════════════════════════════
+   SHARE THIS LINK ANYWHERE!
+═══════════════════════════════════════════════════════════
+
+Copy and paste the main link above to share your portfolio
+with employers, clients, or anyone who wants to see your work.
+
+Works on:
+✓ Desktop computers
+✓ Laptops
+✓ Tablets
+✓ Mobile phones
+✓ Any device with internet
+
+═══════════════════════════════════════════════════════════
+
+IMPORTANT: Make sure GitHub Pages is enabled!
+
+1. Go to: https://github.com/NITIN-SINGH-2611/Portfolio_Nitin/settings/pages
+2. Select "main" branch
+3. Click "Save"
+4. Wait 1-2 minutes
+
+═══════════════════════════════════════════════════════════
+

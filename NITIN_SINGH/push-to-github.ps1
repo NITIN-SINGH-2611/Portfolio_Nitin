@@ -1,9 +1,9 @@
 # Push Portfolio to Existing GitHub Repository
-# Repository: https://github.com/NITIN-SINGH-2611/Portfolio.git
+# Repository: https://github.com/NITIN-SINGH-2611/Portfolio_Nitin.git
 
 $ErrorActionPreference = "Stop"
 $GitHubUsername = "NITIN-SINGH-2611"
-$RepoName = "Portfolio"
+$RepoName = "Portfolio_Nitin"
 $RepoUrl = "https://github.com/$GitHubUsername/$RepoName.git"
 
 Write-Host "========================================" -ForegroundColor Cyan

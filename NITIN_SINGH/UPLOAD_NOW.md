@@ -1,6 +1,6 @@
 # 🚀 Upload Your Portfolio to GitHub NOW
 
-## Repository: https://github.com/NITIN-SINGH-2611/Portfolio.git
+## Repository: https://github.com/NITIN-SINGH-2611/Portfolio_Nitin.git
 
 ## Quick Method (Choose One)
 
@@ -33,7 +33,7 @@ git config user.name "Nitin Singh Samant"
 git config user.email "19BCS2408@gmail.com"
 
 # Add remote repository
-git remote add origin https://github.com/NITIN-SINGH-2611/Portfolio.git
+git remote add origin https://github.com/NITIN-SINGH-2611/Portfolio_Nitin.git
 
 # Add all files
 git add .
@@ -68,7 +68,7 @@ git push -u origin main
 
 ## After Uploading - Enable GitHub Pages
 
-1. Go to: https://github.com/NITIN-SINGH-2611/Portfolio/settings/pages
+1. Go to: https://github.com/NITIN-SINGH-2611/Portfolio_Nitin/settings/pages
 2. Under **Source**, select **main** branch
 3. Select **/ (root)** folder
 4. Click **Save**
@@ -77,8 +77,8 @@ git push -u origin main
 ## Your Live Portfolio Links
 
 After enabling Pages:
-- **Main Portfolio:** https://NITIN-SINGH-2611.github.io/Portfolio/
-- **Simple "Nitin" Link:** https://NITIN-SINGH-2611.github.io/Portfolio/nitin.html
+- **Main Portfolio:** https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/
+- **Simple "Nitin" Link:** https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/nitin.html
 
 ---
 

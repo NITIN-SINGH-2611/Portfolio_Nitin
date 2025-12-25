@@ -1,0 +1,51 @@
+═══════════════════════════════════════════════════════════
+   ✅ YOUR PORTFOLIO LINKS - UPDATED FOR Portfolio_Nitin
+═══════════════════════════════════════════════════════════
+
+🌐 MAIN PORTFOLIO LINK (Share This):
+https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/
+
+📄 PROFESSIONAL LINK PAGE:
+https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/portfolio-link.html
+
+🔗 SHORT "NITIN" LINK:
+https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/nitin.html
+
+═══════════════════════════════════════════════════════════
+   GITHUB REPOSITORY
+═══════════════════════════════════════════════════════════
+
+Repository URL:
+https://github.com/NITIN-SINGH-2611/Portfolio_Nitin
+
+Git Remote:
+https://github.com/NITIN-SINGH-2611/Portfolio_Nitin.git
+
+═══════════════════════════════════════════════════════════
+   ⚠️ IMPORTANT: Enable GitHub Pages First!
+═══════════════════════════════════════════════════════════
+
+1. Go to: https://github.com/NITIN-SINGH-2611/Portfolio_Nitin/settings/pages
+2. Under "Source", select "main" branch
+3. Select "/ (root)" folder
+4. Click "Save"
+5. Wait 1-2 minutes for GitHub to build your site
+
+After enabling, your portfolio will be accessible at the links above!
+
+═══════════════════════════════════════════════════════════
+   📤 TO UPLOAD YOUR FILES
+═══════════════════════════════════════════════════════════
+
+Run this command in the NITIN_SINGH folder:
+
+git remote add origin https://github.com/NITIN-SINGH-2611/Portfolio_Nitin.git
+git add .
+git commit -m "Initial commit: Portfolio website"
+git branch -M main
+git push -u origin main
+
+Or use the script: push-to-github.ps1 or push-to-github.bat
+
+═══════════════════════════════════════════════════════════
+
