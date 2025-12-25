@@ -174,10 +174,18 @@ contactForm.addEventListener('submit', (e) => {
 
     // EmailJS configuration
     // IMPORTANT: Replace these with your EmailJS credentials from https://dashboard.emailjs.com
-    // See EMAILJS_SETUP.md for detailed setup instructions
+    // See EMAILJS_SETUP.md or QUICK_EMAIL_SETUP.txt for detailed setup instructions
     const serviceID = 'YOUR_SERVICE_ID';      // Get from: Email Services → Your Service → Service ID
     const templateID = 'YOUR_TEMPLATE_ID';    // Get from: Email Templates → Your Template → Template ID
     const publicKey = 'YOUR_PUBLIC_KEY';       // Get from: Account → General → Public Key
+
+    // Check if EmailJS is configured
+    if (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_TEMPLATE_ID' || publicKey === 'YOUR_PUBLIC_KEY') {
+        hideLoading(submitButton, originalButtonText);
+        alert('Email service not configured yet. Please set up EmailJS first.\n\nSee QUICK_EMAIL_SETUP.txt for instructions.\n\nFor now, you can email directly at: 19BCS2408@gmail.com');
+        console.error('EmailJS not configured. Please update serviceID, templateID, and publicKey in script.js');
+        return;
+    }
 
     // Prepare email parameters
     const templateParams = {
@@ -200,6 +208,10 @@ contactForm.addEventListener('submit', (e) => {
             console.error('FAILED...', error);
             hideLoading(submitButton, originalButtonText);
             showErrorMessage();
+            // Show detailed error in console for debugging
+            if (error.text) {
+                console.error('EmailJS Error Details:', error.text);
+            }
         });
 });
 
