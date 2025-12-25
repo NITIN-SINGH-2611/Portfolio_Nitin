@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitin - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .link {
+            display: inline-block;
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            padding: 20px 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .link:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .subtitle {
+            color: white;
+            margin-top: 30px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .link {
+                font-size: 2.5rem;
+                padding: 15px 40px;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://NITIN-SINGH-2611.github.io/Portfolio/" class="link" id="nitinLink">
+            Nitin
+        </a>
+        <p class="subtitle">Click to view my portfolio</p>
+    </div>
+    
+    <script>
+        // Auto-redirect after 3 seconds (optional - remove if you don't want this)
+        // setTimeout(function() {
+        //     window.location.href = 'https://NITIN-SINGH-2611.github.io/Portfolio/';
+        // }, 3000);
+    </script>
+</body>
+</html>
+
