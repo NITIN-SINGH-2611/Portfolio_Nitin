@@ -1,0 +1,67 @@
+═══════════════════════════════════════════════════════════
+   🌐 ACCESS YOUR PORTFOLIO FROM ANYWHERE
+═══════════════════════════════════════════════════════════
+
+✅ YOUR CODE IS ON GITHUB - NOW ENABLE PAGES!
+
+═══════════════════════════════════════════════════════════
+   STEP 1: ENABLE GITHUB PAGES (2 MINUTES)
+═══════════════════════════════════════════════════════════
+
+1. Go to: https://github.com/NITIN-SINGH-2611/Portfolio_Nitin/settings/pages
+
+2. Under "Source":
+   - Select "main" branch
+   - Select "/ (root)" folder
+   - Click "Save"
+
+3. Wait 2-3 minutes
+
+═══════════════════════════════════════════════════════════
+   STEP 2: ACCESS YOUR PORTFOLIO
+═══════════════════════════════════════════════════════════
+
+After enabling Pages, your portfolio will be at:
+
+🌐 MAIN PORTFOLIO:
+https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/
+
+🔗 SIMPLE LINK:
+https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/nitin.html
+
+📄 PROFESSIONAL LINK:
+https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/portfolio-link.html
+
+═══════════════════════════════════════════════════════════
+   📱 ACCESS FROM ANY DEVICE
+═══════════════════════════════════════════════════════════
+
+✓ Desktop/Laptop - Open browser, paste the link
+✓ Mobile Phone - Open browser, paste the link  
+✓ Tablet - Open browser, paste the link
+✓ Any device with internet - Just paste the link!
+
+═══════════════════════════════════════════════════════════
+   ✅ VERIFY IT WORKS
+═══════════════════════════════════════════════════════════
+
+1. Enable GitHub Pages (Step 1 above)
+2. Wait 2-3 minutes
+3. Visit: https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/
+4. You should see your portfolio!
+
+═══════════════════════════════════════════════════════════
+   🚨 IF YOU GET 404 ERROR
+═══════════════════════════════════════════════════════════
+
+→ Make sure GitHub Pages is enabled
+→ Wait 3-5 minutes (first build takes time)
+→ Check that index.html is in root folder
+→ Verify branch is "main"
+
+See FIX_404_ERROR.md for detailed help.
+
+═══════════════════════════════════════════════════════════
+
+YOUR PORTFOLIO WILL BE LIVE IN 2-3 MINUTES! 🚀
+
