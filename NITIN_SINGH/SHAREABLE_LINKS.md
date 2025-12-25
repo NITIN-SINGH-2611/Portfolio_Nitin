@@ -63,7 +63,7 @@ Generate a QR code for: `https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/`
 ### For You (Bookmark These)
 - **Main Portfolio:** https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/
 - **Simple Link Page:** https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/portfolio-link.html
-- **GitHub Repository:** https://github.com/NITIN-SINGH-2611/Portfolio
+- **GitHub Repository:** https://github.com/NITIN-SINGH-2611/Portfolio_Nitin
 
 ### For Sharing with Others
 - **Professional Link:** https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/portfolio-link.html
