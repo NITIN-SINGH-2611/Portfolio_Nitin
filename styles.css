@@ -571,6 +571,128 @@ body {
     margin-bottom: 0;
 }
 
+/* Education Section */
+.education {
+    padding: 100px 20px;
+    background: var(--dark-secondary);
+}
+
+.education-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.education-item {
+    background: var(--dark-bg);
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.education-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    background: var(--dark-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    overflow: hidden;
+}
+
+.education-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.education-icon-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.education-content {
+    flex: 1;
+}
+
+.education-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.education-header h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin: 0;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.education-institution {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.education-institution::before {
+    content: '🏫';
+    font-size: 1rem;
+}
+
+.education-period,
+.education-status,
+.education-cgpa {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: var(--dark-secondary);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.education-status {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.3);
+    color: #22c55e;
+}
+
+.education-cgpa {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.3);
+    color: var(--primary-color);
+}
+
 /* Skills Section */
 .skills {
     padding: 100px 20px;
@@ -1039,6 +1161,33 @@ body {
     .experience-project h4,
     .experience-achievements h4 {
         font-size: 1.1rem;
+    }
+
+    .education-item {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .education-icon {
+        width: 60px;
+        height: 60px;
+        align-self: center;
+    }
+
+    .education-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .education-institution {
+        font-size: 1rem;
+    }
+
+    .education-period,
+    .education-status,
+    .education-cgpa {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
     }
 
     .contact-content {
