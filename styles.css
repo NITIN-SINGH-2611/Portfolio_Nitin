@@ -228,6 +228,22 @@ body {
     transform: translateY(-2px);
 }
 
+.resume-btn {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.resume-btn:hover {
+    background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
+}
+
+.resume-btn i {
+    margin-right: 0.5rem;
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
