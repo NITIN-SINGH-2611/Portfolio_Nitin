@@ -217,26 +217,6 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
-.portfolio-link {
-    animation: glow 2s ease-in-out infinite alternate;
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-
-.portfolio-link:hover {
-    animation: none;
-    transform: translateY(-2px) scale(1.05);
-}
-
-@keyframes glow {
-    from {
-        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
-    }
-    to {
-        box-shadow: 0 10px 40px rgba(236, 72, 153, 0.6);
-    }
-}
-
 .btn-secondary {
     background: transparent;
     color: var(--text-primary);
@@ -569,6 +549,102 @@ body {
 
 .experience-achievements ul li:last-child {
     margin-bottom: 0;
+}
+
+/* Internship Section */
+.internship {
+    padding: 100px 20px;
+    background: var(--dark-secondary);
+}
+
+.internship-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.internship-item {
+    background: var(--dark-bg);
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.internship-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.internship-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+}
+
+.internship-company h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.internship-period {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--dark-secondary);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.internship-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.internship-details {
+    padding: 1.5rem;
+    background: var(--dark-secondary);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.internship-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.internship-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.internship-list li i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.internship-list li span {
+    flex: 1;
 }
 
 /* Education Section */
@@ -1161,6 +1237,32 @@ body {
     .experience-project h4,
     .experience-achievements h4 {
         font-size: 1.1rem;
+    }
+
+    .internship-item {
+        padding: 1.5rem;
+    }
+
+    .internship-company h3 {
+        font-size: 1.5rem;
+    }
+
+    .internship-details {
+        padding: 1rem;
+    }
+
+    .internship-list {
+        gap: 1rem;
+    }
+
+    .internship-list li {
+        font-size: 0.95rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .internship-list li i {
+        font-size: 1rem;
     }
 
     .education-item {
