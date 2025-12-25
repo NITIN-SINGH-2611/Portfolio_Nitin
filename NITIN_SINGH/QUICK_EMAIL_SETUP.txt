@@ -1,0 +1,81 @@
+═══════════════════════════════════════════════════════════
+   QUICK EMAIL SETUP - Contact Form to Email
+═══════════════════════════════════════════════════════════
+
+Your contact form is ready! Just need to configure EmailJS.
+
+═══════════════════════════════════════════════════════════
+   STEP 1: Create EmailJS Account (2 minutes)
+═══════════════════════════════════════════════════════════
+
+1. Go to: https://www.emailjs.com/
+2. Click "Sign Up" (free)
+3. Sign up with Google or email
+4. Verify your email
+
+═══════════════════════════════════════════════════════════
+   STEP 2: Connect Gmail Service (2 minutes)
+═══════════════════════════════════════════════════════════
+
+1. Go to: Email Services → Add New Service
+2. Choose "Gmail"
+3. Connect your Gmail account (19BCS2408@gmail.com)
+4. Copy the Service ID (looks like: service_abc123)
+
+═══════════════════════════════════════════════════════════
+   STEP 3: Create Email Template (2 minutes)
+═══════════════════════════════════════════════════════════
+
+1. Go to: Email Templates → Create New Template
+2. Subject: New Contact: {{subject}}
+3. Content:
+   From: {{from_name}}
+   Email: {{from_email}}
+   Subject: {{subject}}
+   Message: {{message}}
+4. Copy the Template ID (looks like: template_xyz789)
+
+═══════════════════════════════════════════════════════════
+   STEP 4: Get Public Key (1 minute)
+═══════════════════════════════════════════════════════════
+
+1. Go to: Account → General
+2. Find "Public Key"
+3. Copy it (looks like: abc123xyz456)
+
+═══════════════════════════════════════════════════════════
+   STEP 5: Update script.js (1 minute)
+═══════════════════════════════════════════════════════════
+
+Open script.js and replace:
+
+Line ~95: emailjs.init("YOUR_PUBLIC_KEY");
+         → emailjs.init("abc123xyz456"); // Your actual key
+
+Line ~140: const serviceID = 'YOUR_SERVICE_ID';
+          → const serviceID = 'service_abc123'; // Your Service ID
+
+Line ~141: const templateID = 'YOUR_TEMPLATE_ID';
+          → const templateID = 'template_xyz789'; // Your Template ID
+
+Line ~142: const publicKey = 'YOUR_PUBLIC_KEY';
+          → const publicKey = 'abc123xyz456'; // Your Public Key
+
+═══════════════════════════════════════════════════════════
+   STEP 6: Test It!
+═══════════════════════════════════════════════════════════
+
+1. Save script.js
+2. Push to GitHub: git add script.js && git commit -m "Configure EmailJS" && git push
+3. Test the contact form on your live site
+4. Check your email: 19BCS2408@gmail.com
+
+═══════════════════════════════════════════════════════════
+
+Total setup time: ~8 minutes
+Free tier: 200 emails/month (perfect for portfolio)
+
+For detailed instructions, see: EMAILJS_SETUP.md
+
+═══════════════════════════════════════════════════════════
+
