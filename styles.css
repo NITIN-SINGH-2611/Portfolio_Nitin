@@ -405,15 +405,42 @@ body {
     transform: none !important;
 }
 
-/* Experience Section */
-.experience {
+/* Experience & Internship Wrapper */
+.experience-internship-wrapper {
     padding: 100px 20px;
     background: var(--dark-bg);
 }
 
-.experience-timeline {
-    max-width: 900px;
+.experience-internship-wrapper .container {
+    max-width: 1400px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.experience-internship-wrapper .experience,
+.experience-internship-wrapper .internship {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-internship-wrapper .experience-timeline,
+.experience-internship-wrapper .internship-timeline {
+    flex: 1;
+}
+
+/* Experience Section */
+.experience {
+    padding: 0;
+    background: transparent;
+}
+
+.experience-timeline {
+    max-width: 100%;
+    margin: 0;
 }
 
 .experience-item {
@@ -553,13 +580,13 @@ body {
 
 /* Internship Section */
 .internship {
-    padding: 100px 20px;
-    background: var(--dark-secondary);
+    padding: 0;
+    background: transparent;
 }
 
 .internship-timeline {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
 }
 
 .internship-item {
@@ -1219,6 +1246,11 @@ body {
 
     .about-stats {
         grid-template-columns: 1fr;
+    }
+
+    .experience-internship-wrapper .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .experience-item {
