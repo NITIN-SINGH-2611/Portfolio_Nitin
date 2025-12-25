@@ -81,7 +81,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.project-card, .skill-category, .stat-item, .contact-item');
+    const animateElements = document.querySelectorAll('.project-card, .skill-category, .stat-item, .contact-item, .experience-item, .experience-project, .experience-achievements');
     animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -90,17 +90,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Initialize EmailJS
+// IMPORTANT: Replace "YOUR_PUBLIC_KEY" with your actual EmailJS Public Key
+// Get it from: https://dashboard.emailjs.com/admin/integration
+(function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+})();
+
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm');
+
+// Show loading state
+function showLoading(button) {
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    button.disabled = true;
+    return originalText;
+}
+
+// Hide loading state
+function hideLoading(button, originalText) {
+    button.innerHTML = originalText;
+    button.disabled = false;
+}
+
+// Show success message
+function showSuccessMessage(name) {
+    const successMsg = document.createElement('div');
+    successMsg.className = 'form-success-message';
+    successMsg.innerHTML = `
+        <i class="fas fa-check-circle"></i>
+        <p>Thank you, ${name}! Your message has been sent successfully. I'll get back to you soon!</p>
+    `;
+    contactForm.parentNode.insertBefore(successMsg, contactForm.nextSibling);
+    
+    // Remove message after 5 seconds
+    setTimeout(() => {
+        successMsg.remove();
+    }, 5000);
+}
+
+// Show error message
+function showErrorMessage() {
+    const errorMsg = document.createElement('div');
+    errorMsg.className = 'form-error-message';
+    errorMsg.innerHTML = `
+        <i class="fas fa-exclamation-circle"></i>
+        <p>Sorry, there was an error sending your message. Please try again or email me directly at 19BCS2408@gmail.com</p>
+    `;
+    contactForm.parentNode.insertBefore(errorMsg, contactForm.nextSibling);
+    
+    // Remove message after 5 seconds
+    setTimeout(() => {
+        errorMsg.remove();
+    }, 5000);
+}
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const submitButton = contactForm.querySelector('button[type="submit"]');
 
     // Simple validation
     if (!name || !email || !subject || !message) {
@@ -115,27 +169,38 @@ contactForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Here you would typically send the form data to a server
-    // For now, we'll just show a success message
-    alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon at ${email}.`);
-    
-    // Reset form
-    contactForm.reset();
-    
-    // In a real application, you would send this data to your backend:
-    // fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ name, email, subject, message })
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     alert('Message sent successfully!');
-    //     contactForm.reset();
-    // })
-    // .catch(error => {
-    //     alert('Error sending message. Please try again.');
-    // });
+    // Show loading state
+    const originalButtonText = showLoading(submitButton);
+
+    // EmailJS configuration
+    // IMPORTANT: Replace these with your EmailJS credentials from https://dashboard.emailjs.com
+    // See EMAILJS_SETUP.md for detailed setup instructions
+    const serviceID = 'YOUR_SERVICE_ID';      // Get from: Email Services → Your Service → Service ID
+    const templateID = 'YOUR_TEMPLATE_ID';    // Get from: Email Templates → Your Template → Template ID
+    const publicKey = 'YOUR_PUBLIC_KEY';       // Get from: Account → General → Public Key
+
+    // Prepare email parameters
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+        to_email: '19BCS2408@gmail.com'
+    };
+
+    // Send email using EmailJS
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
+        .then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            hideLoading(submitButton, originalButtonText);
+            showSuccessMessage(name);
+            contactForm.reset();
+        })
+        .catch((error) => {
+            console.error('FAILED...', error);
+            hideLoading(submitButton, originalButtonText);
+            showErrorMessage();
+        });
 });
 
 // Typing effect for hero title (optional enhancement)
