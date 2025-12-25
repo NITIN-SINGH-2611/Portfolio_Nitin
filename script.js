@@ -172,48 +172,87 @@ contactForm.addEventListener('submit', (e) => {
     // Show loading state
     const originalButtonText = showLoading(submitButton);
 
-    // EmailJS configuration
-    // IMPORTANT: Replace these with your EmailJS credentials from https://dashboard.emailjs.com
-    // See EMAILJS_SETUP.md or QUICK_EMAIL_SETUP.txt for detailed setup instructions
-    const serviceID = 'YOUR_SERVICE_ID';      // Get from: Email Services → Your Service → Service ID
-    const templateID = 'YOUR_TEMPLATE_ID';    // Get from: Email Templates → Your Template → Template ID
-    const publicKey = 'YOUR_PUBLIC_KEY';       // Get from: Account → General → Public Key
+    // Using FormSubmit.co - Works immediately with NO setup needed!
+    // Just needs your email address - no API keys, no configuration!
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('subject', subject);
+    formData.append('message', message);
+    formData.append('_to', '19BCS2408@gmail.com'); // Your email address
+    formData.append('_subject', `Portfolio Contact: ${subject}`); // Email subject
+    formData.append('_template', 'table'); // Email format
 
-    // Check if EmailJS is configured
-    if (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_TEMPLATE_ID' || publicKey === 'YOUR_PUBLIC_KEY') {
-        hideLoading(submitButton, originalButtonText);
-        alert('Email service not configured yet. Please set up EmailJS first.\n\nSee QUICK_EMAIL_SETUP.txt for instructions.\n\nFor now, you can email directly at: 19BCS2408@gmail.com');
-        console.error('EmailJS not configured. Please update serviceID, templateID, and publicKey in script.js');
-        return;
-    }
-
-    // Prepare email parameters
-    const templateParams = {
-        from_name: name,
-        from_email: email,
-        subject: subject,
-        message: message,
-        to_email: '19BCS2408@gmail.com'
-    };
-
-    // Send email using EmailJS
-    emailjs.send(serviceID, templateID, templateParams, publicKey)
-        .then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
+    // Send email using FormSubmit (no setup required!)
+    fetch('https://formsubmit.co/ajax/19BCS2408@gmail.com', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(async (response) => {
+        const json = await response.json();
+        if (response.ok && json.success) {
             hideLoading(submitButton, originalButtonText);
             showSuccessMessage(name);
             contactForm.reset();
-        })
-        .catch((error) => {
-            console.error('FAILED...', error);
-            hideLoading(submitButton, originalButtonText);
-            showErrorMessage();
-            // Show detailed error in console for debugging
-            if (error.text) {
-                console.error('EmailJS Error Details:', error.text);
-            }
-        });
+        } else {
+            throw new Error(json.message || 'Failed to send message');
+        }
+    })
+    .catch((error) => {
+        console.error('FormSubmit Error:', error);
+        hideLoading(submitButton, originalButtonText);
+        // Fallback: Try EmailJS if configured, otherwise show mailto option
+        tryEmailJSFallback(name, email, subject, message, submitButton, originalButtonText);
+    });
 });
+
+// Fallback function
+function tryEmailJSFallback(name, email, subject, message, submitButton, originalButtonText) {
+    // Try EmailJS if configured
+    const serviceID = 'YOUR_SERVICE_ID';
+    const templateID = 'YOUR_TEMPLATE_ID';
+    const publicKey = 'YOUR_PUBLIC_KEY';
+
+    if (serviceID !== 'YOUR_SERVICE_ID' && templateID !== 'YOUR_TEMPLATE_ID' && publicKey !== 'YOUR_PUBLIC_KEY') {
+        // EmailJS is configured, try it
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message,
+            to_email: '19BCS2408@gmail.com'
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                hideLoading(submitButton, originalButtonText);
+                showSuccessMessage(name);
+                contactForm.reset();
+            })
+            .catch((error) => {
+                console.error('EmailJS Error:', error);
+                showMailtoFallback(name, email, subject, message, submitButton, originalButtonText);
+            });
+    } else {
+        // Show mailto fallback
+        showMailtoFallback(name, email, subject, message, submitButton, originalButtonText);
+    }
+}
+
+// Mailto fallback
+function showMailtoFallback(name, email, subject, message, submitButton, originalButtonText) {
+    hideLoading(submitButton, originalButtonText);
+    const mailtoLink = `mailto:19BCS2408@gmail.com?subject=${encodeURIComponent(`Portfolio Contact: ${subject}`)}&body=${encodeURIComponent(`From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    if (confirm('Unable to send email automatically. Would you like to open your email client to send the message manually?')) {
+        window.location.href = mailtoLink;
+    } else {
+        showErrorMessage();
+    }
+}
 
 // Typing effect for hero title (optional enhancement)
 function typeWriter(element, text, speed = 100) {
