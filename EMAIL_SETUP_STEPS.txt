@@ -1,0 +1,99 @@
+═══════════════════════════════════════════════════════════
+   EMAIL SETUP - FOLLOW THESE EXACT STEPS
+═══════════════════════════════════════════════════════════
+
+STEP 1: Go to EmailJS Website
+───────────────────────────────────────────────────────────
+👉 Open: https://www.emailjs.com/
+👉 Click "Sign Up" (top right)
+👉 Sign up with Google (fastest) or email
+👉 Verify your email if needed
+
+STEP 2: Connect Your Gmail
+───────────────────────────────────────────────────────────
+1. After logging in, click "Email Services" (left sidebar)
+2. Click "Add New Service" button
+3. Select "Gmail" from the list
+4. Click "Connect Account"
+5. Sign in with: 19BCS2408@gmail.com
+6. Allow permissions
+7. Service Name: "Portfolio Contact" (or any name)
+8. Click "Create Service"
+9. ⚠️ COPY THE SERVICE ID (looks like: service_abc123xyz)
+   → This is your Service ID
+
+STEP 3: Create Email Template
+───────────────────────────────────────────────────────────
+1. Click "Email Templates" (left sidebar)
+2. Click "Create New Template" button
+3. Fill in:
+   - To Email: 19BCS2408@gmail.com
+   - From Name: {{from_name}}
+   - From Email: {{from_email}}
+   - Subject: New Contact: {{subject}}
+   - Content:
+     ┌─────────────────────────────────────┐
+     │ From: {{from_name}}                │
+     │ Email: {{from_email}}               │
+     │ Subject: {{subject}}                │
+     │                                     │
+     │ Message:                            │
+     │ {{message}}                         │
+     └─────────────────────────────────────┘
+4. Click "Save"
+5. ⚠️ COPY THE TEMPLATE ID (looks like: template_xyz789abc)
+   → This is your Template ID
+
+STEP 4: Get Public Key
+───────────────────────────────────────────────────────────
+1. Click "Account" (left sidebar)
+2. Click "General" tab
+3. Scroll down to "Public Key"
+4. ⚠️ COPY THE PUBLIC KEY (looks like: abc123xyz456)
+   → This is your Public Key
+
+STEP 5: Update script.js
+───────────────────────────────────────────────────────────
+Open: script.js
+
+Find line ~97 (around line 97):
+   emailjs.init("YOUR_PUBLIC_KEY");
+   
+Replace with:
+   emailjs.init("PASTE_YOUR_PUBLIC_KEY_HERE");
+
+Find lines ~178-180:
+   const serviceID = 'YOUR_SERVICE_ID';
+   const templateID = 'YOUR_TEMPLATE_ID';
+   const publicKey = 'YOUR_PUBLIC_KEY';
+   
+Replace with:
+   const serviceID = 'PASTE_YOUR_SERVICE_ID_HERE';
+   const templateID = 'PASTE_YOUR_TEMPLATE_ID_HERE';
+   const publicKey = 'PASTE_YOUR_PUBLIC_KEY_HERE';
+
+STEP 6: Save and Upload
+───────────────────────────────────────────────────────────
+1. Save script.js
+2. Run these commands:
+   git add script.js
+   git commit -m "Configure EmailJS"
+   git push
+
+STEP 7: Test
+───────────────────────────────────────────────────────────
+1. Go to: https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/
+2. Fill contact form
+3. Click "Send Message"
+4. Check email: 19BCS2408@gmail.com
+
+═══════════════════════════════════════════════════════════
+   YOU NEED 3 VALUES FROM EMAILJS:
+═══════════════════════════════════════════════════════════
+
+1. Service ID    → From Email Services page
+2. Template ID   → From Email Templates page  
+3. Public Key    → From Account → General page
+
+═══════════════════════════════════════════════════════════
+
