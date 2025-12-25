@@ -128,6 +128,7 @@ body {
     padding: 100px 20px 50px;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .hero::before {
@@ -290,9 +291,9 @@ body {
     font-size: 8rem;
     color: white;
     box-shadow: var(--shadow-lg);
-    animation: float 3s ease-in-out infinite;
     overflow: hidden;
     padding: 5px;
+    position: relative;
 }
 
 .profile-image {
@@ -321,6 +322,8 @@ body {
 .about {
     padding: 100px 20px;
     background: var(--dark-secondary);
+    position: relative;
+    z-index: 2;
 }
 
 .section-title {
@@ -399,9 +402,9 @@ body {
     font-size: 6rem;
     color: white;
     box-shadow: var(--shadow-lg);
-    animation: float 3s ease-in-out infinite;
     overflow: hidden;
     padding: 5px;
+    position: relative;
 }
 
 .profile-image-about {
@@ -771,9 +774,25 @@ body {
         left: 0;
     }
 
+    .hero {
+        min-height: auto;
+        padding: 120px 20px 40px;
+        overflow: visible;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1;
+        background: var(--dark-bg);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
     }
 
     .hero-title {
@@ -783,6 +802,23 @@ body {
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .hero-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+    .image-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about {
+        padding-top: 40px;
+        margin-top: calc(100vh - 70px);
+        position: relative;
+        z-index: 2;
     }
 
     .about-content {
@@ -807,6 +843,12 @@ body {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 100px 15px 30px;
+        top: 70px;
+        max-height: calc(100vh - 70px);
+    }
+
     .hero-title {
         font-size: 2rem;
     }
@@ -822,6 +864,16 @@ body {
     .btn {
         padding: 10px 20px;
         font-size: 0.9rem;
+    }
+
+    .image-placeholder {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about {
+        padding-top: 40px;
+        margin-top: calc(100vh - 70px);
     }
 }
 
