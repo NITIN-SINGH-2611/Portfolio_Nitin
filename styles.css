@@ -294,6 +294,8 @@ body {
     overflow: hidden;
     padding: 5px;
     position: relative;
+    animation: none !important;
+    transform: none !important;
 }
 
 .profile-image {
@@ -302,6 +304,9 @@ body {
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    animation: none !important;
+    transform: none !important;
 }
 
 .scroll-indicator {
@@ -405,6 +410,8 @@ body {
     overflow: hidden;
     padding: 5px;
     position: relative;
+    animation: none !important;
+    transform: none !important;
 }
 
 .profile-image-about {
@@ -413,6 +420,9 @@ body {
     object-fit: cover;
     border-radius: 15px;
     border: 3px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    animation: none !important;
+    transform: none !important;
 }
 
 /* Skills Section */
@@ -777,16 +787,9 @@ body {
     .hero {
         min-height: auto;
         padding: 120px 20px 40px;
-        overflow: visible;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        width: 100%;
+        position: relative;
         z-index: 1;
         background: var(--dark-bg);
-        max-height: calc(100vh - 70px);
-        overflow-y: auto;
     }
 
     .hero-content {
@@ -815,8 +818,7 @@ body {
     }
 
     .about {
-        padding-top: 40px;
-        margin-top: calc(100vh - 70px);
+        padding-top: 60px;
         position: relative;
         z-index: 2;
     }
@@ -845,8 +847,7 @@ body {
 @media (max-width: 480px) {
     .hero {
         padding: 100px 15px 30px;
-        top: 70px;
-        max-height: calc(100vh - 70px);
+        position: relative;
     }
 
     .hero-title {
@@ -872,8 +873,7 @@ body {
     }
 
     .about {
-        padding-top: 40px;
-        margin-top: calc(100vh - 70px);
+        padding-top: 50px;
     }
 }
 
