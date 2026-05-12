@@ -5,36 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nitin Singh Samant - Java Backend Engineer | Spring Boot | Microservices</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
-    <!-- Animated Starfield Background -->
-    <div class="starfield">
-        <div class="starfield-layer starfield-layer-1"></div>
-        <div class="starfield-layer starfield-layer-2"></div>
-        <div class="starfield-layer starfield-layer-3"></div>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-line"></div>
+            <span class="loader-text">NITIN SINGH SAMANT</span>
+        </div>
     </div>
-    
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="https://NITIN-SINGH-2611.github.io/Portfolio_Nitin/" class="logo-link">Nitin Singh Samant</a>
-            </div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" data-magnetic>NS</a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#internship" class="nav-link">Internship</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link" data-magnetic>Home</a></li>
+                <li><a href="#about" class="nav-link" data-magnetic>About</a></li>
+                <li><a href="#experience" class="nav-link" data-magnetic>Experience</a></li>
+                <li><a href="#skills" class="nav-link" data-magnetic>Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-magnetic>Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-magnetic>Contact</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
+            <div class="hamburger" id="hamburger" data-magnetic>
                 <span></span>
                 <span></span>
             </div>
@@ -43,83 +48,127 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="greeting">Hello, I'm</span>
-                    <span class="name">Nitin Singh Samant</span>
-                </h1>
-                <p class="hero-subtitle">Java Backend Engineer — Spring Boot — Microservices</p>
-                <p class="hero-description">Backend Engineer with 3 years of experience building scalable, production-grade backend systems using Java and Spring Boot. Strong expertise in designing microservices architectures, REST APIs, and distributed system workflows for enterprise-scale applications.</p>
-                <div class="hero-buttons">
-                    <a href="NITIN_RESUME.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary resume-btn" download="Nitin_Singh_Samant_Resume.pdf">
-                        <i class="fas fa-file-pdf"></i> Download Resume
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        <div class="hero-bg-shapes">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="gradient-blob blob-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-overline reveal-text">
+                    <span>JAVA BACKEND ENGINEER</span>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/nitin-singh-samant-1a4227301" target="_blank" rel="noopener noreferrer" class="social-link">
-                        <i class="fab fa-linkedin"></i>
+                <h1 class="hero-title">
+                    <span class="title-line reveal-text"><span>Hello, I'm</span></span>
+                    <span class="title-line title-name reveal-text"><span>Nitin Singh</span></span>
+                    <span class="title-line title-name reveal-text"><span>Samant</span></span>
+                </h1>
+                <p class="hero-description reveal-up">
+                    Backend Engineer with 3 years of experience building scalable, 
+                    production-grade systems using Java &amp; Spring Boot. Expertise in 
+                    microservices, REST APIs, and distributed system workflows.
+                </p>
+                <div class="hero-actions reveal-up">
+                    <a href="NITIN_RESUME.pdf" target="_blank" rel="noopener noreferrer" class="btn-magnetic" data-magnetic download="Nitin_Singh_Samant_Resume.pdf">
+                        <span class="btn-text"><i class="fas fa-arrow-down"></i> Resume</span>
                     </a>
-                    <a href="mailto:19BCS2408@gmail.com" class="social-link">
+                    <a href="#contact" class="btn-magnetic btn-outline" data-magnetic>
+                        <span class="btn-text">Let's Talk</span>
+                    </a>
+                </div>
+                <div class="hero-social reveal-up">
+                    <a href="https://www.linkedin.com/in/nitin-singh-samant-1a4227301" target="_blank" rel="noopener noreferrer" class="social-icon" data-magnetic>
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:19BCS2408@gmail.com" class="social-icon" data-magnetic>
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-placeholder">
-                    <img src="profile-picture.jfif" alt="Nitin Singh Samant" class="profile-image">
+            <div class="hero-visual reveal-up">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-border"></div>
+                    <img src="profile-picture.jfif" alt="Nitin Singh Samant" class="hero-image">
+                </div>
+                <div class="hero-status">
+                    <div class="status-dot"></div>
+                    <span>Available for opportunities</span>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <a href="#about">
-                <i class="fas fa-chevron-down"></i>
+        <div class="scroll-cta">
+            <a href="#about" class="scroll-text">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
             </a>
         </div>
     </section>
 
+    <!-- Marquee Section -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>SPRING BOOT</span><span class="marquee-dot"></span>
+                <span>MICROSERVICES</span><span class="marquee-dot"></span>
+                <span>REST APIs</span><span class="marquee-dot"></span>
+                <span>JAVA</span><span class="marquee-dot"></span>
+                <span>SYSTEM DESIGN</span><span class="marquee-dot"></span>
+                <span>DISTRIBUTED SYSTEMS</span><span class="marquee-dot"></span>
+                <span>DOCKER</span><span class="marquee-dot"></span>
+                <span>CI/CD</span><span class="marquee-dot"></span>
+                <span>SPRING BOOT</span><span class="marquee-dot"></span>
+                <span>MICROSERVICES</span><span class="marquee-dot"></span>
+                <span>REST APIs</span><span class="marquee-dot"></span>
+                <span>JAVA</span><span class="marquee-dot"></span>
+                <span>SYSTEM DESIGN</span><span class="marquee-dot"></span>
+                <span>DISTRIBUTED SYSTEMS</span><span class="marquee-dot"></span>
+                <span>DOCKER</span><span class="marquee-dot"></span>
+                <span>CI/CD</span><span class="marquee-dot"></span>
+            </div>
+        </div>
+    </div>
+
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section about-section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Backend Engineer with 3 years of experience building scalable, production-grade backend systems using Java 
-                        and Spring Boot. Strong expertise in designing microservices architectures, REST APIs, and distributed system 
-                        workflows for enterprise-scale applications.
+            <div class="section-header">
+                <span class="section-label reveal-text"><span>01 / ABOUT</span></span>
+                <h2 class="section-title reveal-text"><span>Who I Am</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text-col">
+                    <p class="about-lead reveal-up">
+                        Backend Engineer with 3 years of experience building scalable, 
+                        production-grade backend systems using Java and Spring Boot.
                     </p>
-                    <p>
-                        Proven experience in system optimization, backend service orchestration, and automation across large-scale 
-                        telecom infrastructure. Experienced in leveraging modern engineering tools including AI-assisted development 
-                        (Cursor, LLM APIs) to improve development efficiency and debugging workflows.
+                    <p class="about-body reveal-up">
+                        Strong expertise in designing microservices architectures, REST APIs, 
+                        and distributed system workflows for enterprise-scale applications. 
+                        Proven experience in system optimization, backend service orchestration, 
+                        and automation across large-scale telecom infrastructure.
                     </p>
-                    <p>
-                        Strong understanding of system design principles including scalability, modular architecture, and 
-                        performance optimization.
+                    <p class="about-body reveal-up">
+                        Experienced in leveraging modern engineering tools including AI-assisted 
+                        development (Cursor, LLM APIs) to improve development efficiency and 
+                        debugging workflows. Strong understanding of system design principles 
+                        including scalability, modular architecture, and performance optimization.
                     </p>
-                    <p>
-                        <strong>Date of Birth:</strong> November 26, 2001
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h3>06+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>3+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>10+</h3>
-                            <p>Microservices Built</p>
-                        </div>
-                    </div>
                 </div>
-                <div class="about-image">
-                    <div class="image-card">
-                        <img src="profile-picture.jfif" alt="Nitin Singh Samant" class="profile-image-about">
+                <div class="about-stats-col">
+                    <div class="stat-card reveal-up" data-tilt>
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-card reveal-up" data-tilt>
+                        <span class="stat-number" data-count="6">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat-card reveal-up" data-tilt>
+                        <span class="stat-number" data-count="10">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label">Microservices Built</span>
                     </div>
                 </div>
             </div>
@@ -127,251 +176,167 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience-internship-wrapper">
-        <div class="container" style="display:block; max-width:1200px;">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-timeline" style="max-width:900px; margin:0 auto;">
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label reveal-text"><span>02 / EXPERIENCE</span></span>
+                <h2 class="section-title reveal-text"><span>Where I've Worked</span></h2>
+            </div>
 
+            <div class="timeline">
                 <!-- SDE I -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-company">
-                            <h3>Jio Platforms Ltd.</h3>
-                            <span class="experience-period">June 2024 – Present</span>
-                        </div>
-                        <p style="color:var(--text-primary); font-weight:600; font-size:1.2rem; margin:0.5rem 0;">Software Development Engineer I</p>
-                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.5rem;">Navi Mumbai, India</p>
-                        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem;">
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">Java</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">Spring Boot</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">REST APIs</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">React</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">SQL</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">Linux</span>
-                        </div>
+                <div class="timeline-item reveal-up" data-tilt>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
                     </div>
-                    <div class="experience-content">
-                        <div class="experience-project">
-                            <h4><i class="fas fa-cubes"></i> Microservices Backend Systems</h4>
-                            <p>Designed and developed microservices-based backend systems using Spring Boot for enterprise network provisioning workflows.</p>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Development Engineer I</h3>
+                                <span class="timeline-company">Jio Platforms Ltd.</span>
+                            </div>
+                            <span class="timeline-date">Jun 2024 — Present</span>
                         </div>
-                        <div class="experience-project">
-                            <h4><i class="fas fa-chart-bar"></i> Production Defect Analysis</h4>
-                            <p>Built backend services for processing large-scale production defect data, improving root-cause analysis time by <strong>40%</strong>.</p>
+                        <div class="timeline-tags">
+                            <span>Java</span><span>Spring Boot</span><span>REST APIs</span>
+                            <span>React</span><span>SQL</span><span>Linux</span>
                         </div>
-                        <div class="experience-project">
-                            <h4><i class="fas fa-wand-magic-sparkles"></i> Legacy Modernization with Cursor AI</h4>
-                            <p>Led modernization of legacy JSP/JSV-based applications to a scalable architecture using Spring Boot + React, leveraging <strong>Cursor AI</strong> for code refactoring, API generation, and accelerated development, reducing development effort by <strong>50%</strong>.</p>
-                        </div>
-                        <div class="experience-project">
-                            <h4><i class="fas fa-server"></i> RESTful API Design</h4>
-                            <p>Designed RESTful APIs supporting high-throughput enterprise workflows and service orchestration.</p>
-                        </div>
-                        <div class="experience-project">
-                            <h4><i class="fas fa-terminal"></i> Automation & Monitoring</h4>
-                            <p>Developed automation scripts for system monitoring, log rotation, and backup management in Linux-based environments.</p>
-                        </div>
-                        <div class="experience-project">
-                            <h4><i class="fas fa-brain"></i> AI-Assisted Development</h4>
-                            <p>Improved debugging and operational efficiency by applying LLM-based tools (OpenAI APIs, Cursor AI) for log analysis and issue resolution.</p>
-                        </div>
+                        <ul class="timeline-details">
+                            <li>Designed and developed microservices-based backend systems using Spring Boot for enterprise network provisioning workflows.</li>
+                            <li>Built backend services for processing large-scale production defect data, improving root-cause analysis time by <strong>40%</strong>.</li>
+                            <li>Led modernization of legacy JSP/JSV applications to Spring Boot + React using <strong>Cursor AI</strong>, reducing development effort by <strong>50%</strong>.</li>
+                            <li>Designed RESTful APIs supporting high-throughput enterprise workflows and service orchestration.</li>
+                            <li>Improved debugging and operational efficiency using LLM-based tools (OpenAI APIs, Cursor AI).</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- SDE -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-company">
-                            <h3>Jio Platforms Ltd.</h3>
-                            <span class="experience-period">Feb 2024 – June 2024</span>
-                        </div>
-                        <p style="color:var(--text-primary); font-weight:600; font-size:1.2rem; margin:0.5rem 0;">Software Development Engineer</p>
-                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.5rem;">Navi Mumbai, India</p>
-                        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem;">
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">Java</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">Spring Boot</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">REST APIs</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">React</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">SQL</span>
-                        </div>
+                <div class="timeline-item reveal-up" data-tilt>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
                     </div>
-                    <div class="experience-content">
-                        <div class="experience-project">
-                            <h4><i class="fas fa-cogs"></i> Backend Services & REST APIs</h4>
-                            <p>Developed backend services and REST APIs for monitoring distributed systems and service request workflows.</p>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Development Engineer</h3>
+                                <span class="timeline-company">Jio Platforms Ltd.</span>
+                            </div>
+                            <span class="timeline-date">Feb 2024 — Jun 2024</span>
                         </div>
-                        <div class="experience-project">
-                            <h4><i class="fas fa-bell"></i> Event-driven Processing</h4>
-                            <p>Designed background processing systems for alarms and event-driven workflows in production environments.</p>
+                        <div class="timeline-tags">
+                            <span>Java</span><span>Spring Boot</span><span>REST APIs</span>
+                            <span>React</span><span>SQL</span>
                         </div>
-                        <div class="experience-project">
-                            <h4><i class="fas fa-globe"></i> Internal Enterprise Tools</h4>
-                            <p>Built and deployed internal tools supporting enterprise operations, improving system observability and defect tracking.</p>
-                        </div>
-                        <div class="experience-achievements">
-                            <h4><i class="fas fa-users"></i> Collaboration</h4>
-                            <ul>
-                                <li>Collaborated across teams to design scalable backend components and improve system reliability.</li>
-                            </ul>
-                        </div>
+                        <ul class="timeline-details">
+                            <li>Developed backend services and REST APIs for monitoring distributed systems and service request workflows.</li>
+                            <li>Designed background processing systems for alarms and event-driven workflows in production environments.</li>
+                            <li>Built and deployed internal tools supporting enterprise operations, improving system observability.</li>
+                            <li>Collaborated across teams to design scalable backend components and improve system reliability.</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- GET -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-company">
-                            <h3>Jio Platforms Ltd.</h3>
-                            <span class="experience-period">Dec 2023 – Feb 2024</span>
-                        </div>
-                        <p style="color:var(--text-primary); font-weight:600; font-size:1.2rem; margin:0.5rem 0;">Graduate Engineer Trainee (GET)</p>
-                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:0.5rem;">Navi Mumbai, India</p>
-                        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem;">
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">Java</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">Spring Boot</span>
-                            <span style="padding:0.3rem 0.8rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); border-radius:15px; font-size:0.8rem; color:var(--secondary-color);">React</span>
-                        </div>
+                <div class="timeline-item reveal-up" data-tilt>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
                     </div>
-                    <div class="experience-content">
-                        <div class="experience-project">
-                            <h4><i class="fas fa-project-diagram"></i> Monitoring Dashboard</h4>
-                            <p>Developed real-time monitoring dashboard using React and Spring Boot.</p>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Graduate Engineer Trainee</h3>
+                                <span class="timeline-company">Jio Platforms Ltd.</span>
+                            </div>
+                            <span class="timeline-date">Dec 2023 — Feb 2024</span>
                         </div>
-                        <div class="experience-achievements">
-                            <h4><i class="fas fa-tools"></i> Backend & Monitoring</h4>
-                            <ul>
-                                <li>Built backend APIs for data retrieval, monitoring, and reporting.</li>
-                                <li>Supported L2 production systems including debugging, log analysis, and issue resolution.</li>
-                            </ul>
+                        <div class="timeline-tags">
+                            <span>Java</span><span>Spring Boot</span><span>React</span>
                         </div>
+                        <ul class="timeline-details">
+                            <li>Developed real-time monitoring dashboard using React and Spring Boot.</li>
+                            <li>Built backend APIs for data retrieval, monitoring, and reporting.</li>
+                            <li>Supported L2 production systems including debugging, log analysis, and issue resolution.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Analyst at eClerx -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-company">
-                            <h3>eClerx Services Ltd.</h3>
-                            <span class="experience-period">Jul 2023 – Dec 2023</span>
-                        </div>
-                        <p style="color:var(--text-primary); font-weight:600; font-size:1.2rem; margin:0.5rem 0;">Analyst</p>
-                        <p style="color:var(--text-muted); font-size:0.9rem;">Chandigarh, India</p>
+                <!-- Analyst -->
+                <div class="timeline-item reveal-up" data-tilt>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
                     </div>
-                    <div class="experience-content">
-                        <div class="experience-project">
-                            <h4><i class="fas fa-chart-line"></i> Automated Reporting</h4>
-                            <p>Automated reporting workflows using backend data processing utilities, reducing manual effort by <strong>30%</strong>.</p>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Analyst</h3>
+                                <span class="timeline-company">eClerx Services Ltd.</span>
+                            </div>
+                            <span class="timeline-date">Jul 2023 — Dec 2023</span>
                         </div>
-                        <div class="experience-achievements">
-                            <h4><i class="fas fa-database"></i> Data Processing</h4>
-                            <ul>
-                                <li>Performed large-scale data validation and processing across enterprise datasets.</li>
-                                <li>Improved data accuracy and reporting efficiency through structured pipelines.</li>
-                            </ul>
-                        </div>
+                        <ul class="timeline-details">
+                            <li>Automated reporting workflows using backend data processing utilities, reducing manual effort by <strong>30%</strong>.</li>
+                            <li>Performed large-scale data validation and processing across enterprise datasets.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Internship at HighRadius -->
-                <div id="internship" class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-company">
-                            <h3>HighRadius</h3>
-                            <span class="experience-period">Jun 2022 – Dec 2022</span>
-                        </div>
-                        <p style="color:var(--text-primary); font-weight:600; font-size:1.2rem; margin:0.5rem 0;">Software Engineer Intern</p>
-                        <p style="color:var(--text-muted); font-size:0.9rem;">Remote</p>
+                <!-- Intern -->
+                <div class="timeline-item reveal-up" data-tilt>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
                     </div>
-                    <div class="experience-content">
-                        <div class="experience-achievements">
-                            <h4><i class="fas fa-code"></i> Backend Development</h4>
-                            <ul>
-                                <li>Developed backend modules and utilities using Java.</li>
-                                <li>Assisted in debugging, testing, and optimizing backend logic.</li>
-                                <li>Worked in Agile environment contributing to feature development cycles.</li>
-                            </ul>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Engineer Intern</h3>
+                                <span class="timeline-company">HighRadius</span>
+                            </div>
+                            <span class="timeline-date">Jun 2022 — Dec 2022</span>
                         </div>
+                        <ul class="timeline-details">
+                            <li>Developed backend modules and utilities using Java.</li>
+                            <li>Assisted in debugging, testing, and optimizing backend logic.</li>
+                            <li>Worked in Agile environment contributing to feature development cycles.</li>
+                        </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="education">
+    <section id="education" class="section education-section">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-timeline">
-                <!-- MBA -->
-                <div class="education-item">
-                    <div class="education-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Chandigarh_University_logo.png/220px-Chandigarh_University_logo.png" alt="Chandigarh University" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="education-icon-fallback" style="display:none;">
-                            <i class="fas fa-university"></i>
-                        </div>
-                    </div>
-                    <div class="education-content">
-                        <div class="education-header">
-                            <h3>MBA in Data Science and Artificial Intelligence</h3>
-                            <span class="education-institution">Chandigarh University</span>
-                            <span class="education-period">Expected 2027</span>
-                            <span class="education-cgpa">GPA: 9.02</span>
-                            <span class="education-status">Pursuing</span>
+            <div class="section-header">
+                <span class="section-label reveal-text"><span>03 / EDUCATION</span></span>
+                <h2 class="section-title reveal-text"><span>Academic Background</span></h2>
+            </div>
+            <div class="education-grid">
+                <div class="edu-card reveal-up" data-tilt>
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-info">
+                        <h3>MBA in Data Science &amp; AI</h3>
+                        <span class="edu-school">Chandigarh University</span>
+                        <div class="edu-meta">
+                            <span class="edu-badge edu-pursuing">Pursuing</span>
+                            <span class="edu-badge">GPA: 9.02</span>
+                            <span class="edu-badge">Expected 2027</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- B.Tech -->
-                <div class="education-item">
-                    <div class="education-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Chandigarh_University_logo.png/220px-Chandigarh_University_logo.png" alt="Chandigarh University" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="education-icon-fallback" style="display:none;">
-                            <i class="fas fa-university"></i>
-                        </div>
-                    </div>
-                    <div class="education-content">
-                        <div class="education-header">
-                            <h3>Bachelor of Engineering in Computer Science</h3>
-                            <span class="education-institution">Chandigarh University</span>
-                            <span class="education-period">2023</span>
-                            <span class="education-cgpa">77.7%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HSC -->
-                <div class="education-item">
-                    <div class="education-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/Kendriya_Vidyalaya_logo.svg/200px-Kendriya_Vidyalaya_logo.svg.png" alt="Kendriya Vidyalaya" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="education-icon-fallback" style="display:none;">
-                            <i class="fas fa-school"></i>
-                        </div>
-                    </div>
-                    <div class="education-content">
-                        <div class="education-header">
-                            <h3>Higher Secondary Certificate (HSC)</h3>
-                            <span class="education-institution">Kendriya Vidyalaya AFS, Jorhat</span>
-                            <span class="education-period">2019</span>
-                            <span class="education-cgpa">CGPA: 7.77</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SSC -->
-                <div class="education-item">
-                    <div class="education-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/Kendriya_Vidyalaya_logo.svg/200px-Kendriya_Vidyalaya_logo.svg.png" alt="Kendriya Vidyalaya" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="education-icon-fallback" style="display:none;">
-                            <i class="fas fa-school"></i>
-                        </div>
-                    </div>
-                    <div class="education-content">
-                        <div class="education-header">
-                            <h3>Secondary School Certificate (SSC)</h3>
-                            <span class="education-institution">Kendriya Vidyalaya No. 3, Patiala Cantt</span>
-                            <span class="education-period">2017</span>
-                            <span class="education-cgpa">CGPA: 9.4</span>
+                <div class="edu-card reveal-up" data-tilt>
+                    <div class="edu-icon"><i class="fas fa-university"></i></div>
+                    <div class="edu-info">
+                        <h3>B.E. in Computer Science</h3>
+                        <span class="edu-school">Chandigarh University</span>
+                        <div class="edu-meta">
+                            <span class="edu-badge">77.7%</span>
+                            <span class="edu-badge">2023</span>
                         </div>
                     </div>
                 </div>
@@ -380,58 +345,67 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="section skills-section">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="section-header">
+                <span class="section-label reveal-text"><span>04 / SKILLS</span></span>
+                <h2 class="section-title reveal-text"><span>Tech Stack</span></h2>
+            </div>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Java (Primary)</span>
-                        <span class="skill-tag">SQL</span>
+                <div class="skill-card reveal-up" data-tilt>
+                    <div class="skill-card-icon"><i class="fas fa-code"></i></div>
+                    <h3>Programming</h3>
+                    <div class="skill-pills">
+                        <span>Java (Primary)</span>
+                        <span>SQL</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Backend</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Spring Boot</span>
-                        <span class="skill-tag">Microservices</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">API Design</span>
+                <div class="skill-card reveal-up" data-tilt>
+                    <div class="skill-card-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend</h3>
+                    <div class="skill-pills">
+                        <span>Spring Boot</span>
+                        <span>Microservices</span>
+                        <span>REST APIs</span>
+                        <span>API Design</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-sitemap"></i> System Design</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Scalable Systems</span>
-                        <span class="skill-tag">Distributed Systems</span>
-                        <span class="skill-tag">Service-Oriented Architecture</span>
+                <div class="skill-card reveal-up" data-tilt>
+                    <div class="skill-card-icon"><i class="fas fa-sitemap"></i></div>
+                    <h3>System Design</h3>
+                    <div class="skill-pills">
+                        <span>Scalable Systems</span>
+                        <span>Distributed Systems</span>
+                        <span>SOA</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Databases</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">SQLite</span>
-                        <span class="skill-tag">Neo4j</span>
+                <div class="skill-card reveal-up" data-tilt>
+                    <div class="skill-card-icon"><i class="fas fa-database"></i></div>
+                    <h3>Databases</h3>
+                    <div class="skill-pills">
+                        <span>MySQL</span>
+                        <span>SQLite</span>
+                        <span>Neo4j</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> DevOps & Tools</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">Azure</span>
+                <div class="skill-card reveal-up" data-tilt>
+                    <div class="skill-card-icon"><i class="fas fa-tools"></i></div>
+                    <h3>DevOps &amp; Tools</h3>
+                    <div class="skill-pills">
+                        <span>Docker</span>
+                        <span>Git</span>
+                        <span>CI/CD</span>
+                        <span>Linux</span>
+                        <span>Azure</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> Generative AI (Supporting)</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">OpenAI APIs</span>
-                        <span class="skill-tag">Cursor AI</span>
-                        <span class="skill-tag">LLM Integration</span>
+                <div class="skill-card reveal-up" data-tilt>
+                    <div class="skill-card-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Generative AI</h3>
+                    <div class="skill-pills">
+                        <span>OpenAI APIs</span>
+                        <span>Cursor AI</span>
+                        <span>LLM Integration</span>
                     </div>
                 </div>
             </div>
@@ -439,36 +413,31 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="section projects-section">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header">
+                <span class="section-label reveal-text"><span>05 / PROJECTS</span></span>
+                <h2 class="section-title reveal-text"><span>Featured Work</span></h2>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>AI-Powered Developer Assistant</h3>
-                        <p>Built LLM-powered developer assistant for code generation, debugging, and documentation. Designed API layer for integrating AI workflows into development pipelines. Applied advanced prompt engineering techniques to improve response accuracy and relevance.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>FastAPI</span>
-                            <span>OpenAI APIs</span>
-                        </div>
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-card-glow"></div>
+                    <div class="project-number">01</div>
+                    <div class="project-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI-Powered Developer Assistant</h3>
+                    <p>Built LLM-powered developer assistant for code generation, debugging, and documentation. Designed API layer for integrating AI workflows into development pipelines.</p>
+                    <div class="project-tech-pills">
+                        <span>Python</span><span>FastAPI</span><span>OpenAI APIs</span>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-file-waveform"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>AI Log Analyzer for Production Systems</h3>
-                        <p>Developed AI-based log analysis tool for detecting error patterns and root-cause summarization. Enabled natural language querying of logs for faster debugging.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>LLM APIs</span>
-                        </div>
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-card-glow"></div>
+                    <div class="project-number">02</div>
+                    <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>AI Log Analyzer</h3>
+                    <p>Developed AI-based log analysis tool for detecting error patterns and root-cause summarization. Enabled natural language querying of logs for faster debugging.</p>
+                    <div class="project-tech-pills">
+                        <span>Python</span><span>LLM APIs</span>
                     </div>
                 </div>
             </div>
@@ -476,94 +445,113 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
+    <section id="certifications" class="section certifications-section">
         <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="fab fa-google"></i>
+            <div class="section-header">
+                <span class="section-label reveal-text"><span>06 / CERTIFICATIONS</span></span>
+                <h2 class="section-title reveal-text"><span>Credentials</span></h2>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card reveal-up" data-tilt>
+                    <div class="cert-icon"><i class="fab fa-google"></i></div>
+                    <div class="cert-info">
+                        <h3>Google Cloud Platform Professional</h3>
+                        <span>Jio &amp; Google Cloud</span>
                     </div>
-                    <div class="certification-content">
-                        <h3>Google Cloud Platform Professional Certification</h3>
-                        <p class="certification-issuer">Jio & Google Cloud</p>
-                    </div>
+                    <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
                 </div>
-
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="fas fa-infinity"></i>
-                    </div>
-                    <div class="certification-content">
+                <div class="cert-card reveal-up" data-tilt>
+                    <div class="cert-icon"><i class="fas fa-infinity"></i></div>
+                    <div class="cert-info">
                         <h3>DevOps Foundations</h3>
-                        <p class="certification-issuer">DevOps</p>
+                        <span>DevOps</span>
                     </div>
+                    <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
                 </div>
-
-                <div class="certification-card">
-                    <div class="certification-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="certification-content">
+                <div class="cert-card reveal-up" data-tilt>
+                    <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="cert-info">
                         <h3>Cursor AI Developer Certification</h3>
-                        <p class="certification-issuer">Cursor AI</p>
+                        <span>Cursor AI</span>
                     </div>
+                    <div class="cert-arrow"><i class="fas fa-arrow-right"></i></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section contact-section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-subtitle">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <a href="mailto:19BCS2408@gmail.com">19BCS2408@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Location</h3>
-                            <p>Navi Mumbai, India</p>
+            <div class="section-header">
+                <span class="section-label reveal-text"><span>07 / CONTACT</span></span>
+                <h2 class="section-title contact-title reveal-text"><span>Let's Build</span></h2>
+                <h2 class="section-title contact-title reveal-text"><span>Something Great</span></h2>
+            </div>
+            <p class="contact-lead reveal-up">I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+            <div class="contact-grid">
+                <div class="contact-info-col reveal-up">
+                    <div class="contact-card" data-tilt>
+                        <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="contact-card-label">Email</span>
+                            <a href="mailto:19BCS2408@gmail.com" class="contact-card-value">19BCS2408@gmail.com</a>
                         </div>
                     </div>
-                    <div class="social-links-large">
-                        <a href="https://www.linkedin.com/in/nitin-singh-samant-1a4227301" target="_blank" rel="noopener noreferrer" class="social-link-large">
-                            <i class="fab fa-linkedin"></i>
+                    <div class="contact-card" data-tilt>
+                        <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <span class="contact-card-label">Location</span>
+                            <span class="contact-card-value">Navi Mumbai, India</span>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://www.linkedin.com/in/nitin-singh-samant-1a4227301" target="_blank" rel="noopener noreferrer" class="contact-social-link" data-magnetic>
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <div class="form-row reveal-up">
+                        <div class="form-field">
+                            <input type="text" id="name" name="name" placeholder=" " required>
+                            <label for="name">Your Name</label>
+                            <div class="field-line"></div>
+                        </div>
+                        <div class="form-field">
+                            <input type="email" id="email" name="email" placeholder=" " required>
+                            <label for="email">Your Email</label>
+                            <div class="field-line"></div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <div class="form-field reveal-up">
+                        <input type="text" id="subject" name="subject" placeholder=" " required>
+                        <label for="subject">Subject</label>
+                        <div class="field-line"></div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    <div class="form-field reveal-up">
+                        <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+                        <label for="message">Message</label>
+                        <div class="field-line"></div>
                     </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn-magnetic btn-submit reveal-up" data-magnetic>
+                        <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-logo">NS</span>
+                <p>&copy; 2026 Nitin Singh Samant. Crafted with precision.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
-
