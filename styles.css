@@ -1271,6 +1271,11 @@ img { max-width: 100%; display: block; }
     transition: color 0.3s;
 }
 
+a.contact-card-link {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 a.contact-card-value:hover {
     color: var(--accent-light);
 }
