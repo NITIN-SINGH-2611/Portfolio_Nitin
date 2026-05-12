@@ -369,16 +369,55 @@ img { max-width: 100%; display: block; }
     font-family: var(--font-heading);
     font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.12;
     letter-spacing: -0.03em;
     color: var(--text-secondary);
 }
 
+/* Greeting: readable grey, spaced from name */
+.title-greeting {
+    font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.35rem;
+    color: var(--text-muted);
+}
+
+/* Gradient must live on the inner span — clipping on the block caused solid purple boxes */
 .title-name {
-    background: linear-gradient(135deg, var(--text) 0%, var(--accent-light) 50%, var(--pink) 100%);
+    margin-top: 0.1rem;
+    color: var(--text);
+    background: none;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+}
+
+.title-name > span {
+    display: inline-block;
+    max-width: 100%;
+    padding-bottom: 0.06em;
+    background: linear-gradient(
+        120deg,
+        #f8fafc 0%,
+        #e2e8f0 22%,
+        #c7d2fe 50%,
+        #818cf8 78%,
+        #a78bfa 100%
+    );
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* Improve gradient text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+    .title-name > span {
+        -webkit-text-fill-color: #f1f5f9;
+        color: #f1f5f9;
+        background: none;
+    }
 }
 
 .hero-description {
@@ -1544,6 +1583,10 @@ a.contact-card-value:hover {
 
     .title-line {
         font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .title-greeting {
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
     }
 
     .hero-image-wrapper {
